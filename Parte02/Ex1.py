@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+#Nighfall
 #Carregar imagem lake.jpg do disco e mostrá-a
 
+import numpy as np
 import cv2
 import numpy as np
 
@@ -10,20 +12,27 @@ def main():
     print('Showing Image lake.jpg')
 
     image = cv2.imread("../SAVI/Parte02/images/lake.jpg")
-    #Load image
+    img = cv2.imread("../SAVI/Parte02/images/lake.jpg")
 
-    cv2.imshow('Display window', image)
-    cv2.waitKey(0)
-    #Show image
+    #Load image
 
     h,w,_=image.shape[::]
     img_dark=image
     img_dark[:,int(w/2):] = (image[:,int(w/2):]*0.5).astype(np.int8)     
-    cv2.imshow('Darkened Image',img_dark)
-    cv2.waitKey(0)
+    
+    h,w,_= img.shape[::-1]
 
-    for i in no.arange(1,0.2,-0.01):
-        
+    #for y in range(0,h/2):
+    #    for x in range(0,w):
+     #       px=getPixel(img,x,y) 
+      #      setBlue(px,y*(2.0/h)) 
+       #     setRed(px,y*(2.0/h)) 
+        #    setGreen(px,y*(2.0/h))
+    
+    cv2.imshow('Lake', img)
+    cv2.imshow('Half Darkened',img_dark)
+   # cv2.imshow('Nighfall',img_d)
+    cv2.waitKey(0)
 
 if __name__ == '__main__':
     main()
