@@ -5,7 +5,6 @@
 
 import numpy as np
 import cv2
-import numpy as np
 
 def main():
 
@@ -16,7 +15,6 @@ def main():
 
     #Load image
 
-    h,w,_=image.shape[::]
     img_dark=image
     img_dark[:,int(w/2):] = (image[:,int(w/2):]*0.5).astype(np.int8)     
     
