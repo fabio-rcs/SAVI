@@ -6,21 +6,16 @@ import cv2
 
 def main():
 
-    image_rgb = cv2.imread('../SAVI/Parte02/images/scene.jpg')
+    image_rgb = cv2.imread('../Parte02/images/scene.jpg')
     H,W,_ = image_rgb.shape
     image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_BGR2GRAY)
-    template = cv2.imread('../SAVI/Parte02/images/wally.png')
+    template = cv2.imread('../Parte02/images/wally.png')
     h,w,_ = template.shape
-
 
     result = cv2.matchTemplate(image_rgb, template, cv2.TM_CCOEFF_NORMED)
     _, max_val, _, max_loc = cv2.minMaxLoc(result)
 
-
     image_gui = image_rgb * 0
-
-
-
 
     top_left = (max_loc[0], max_loc[1])
     bottom_right = (max_loc[0] + w , max_loc[1] + h)

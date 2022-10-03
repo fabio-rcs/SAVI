@@ -1,23 +1,31 @@
 #!/usr/bin/env python3
 
-import math
 import cv2
 import numpy as np
 
 def main():
+    img = cv2.imread("../Parte02/images/scene.jpg")
+    template = cv2.imread("../Parte02/images/wally.png")
+    #Load image and template
 
-    print('Showing Image lake.jpg')
-
-    img = cv2.imread("../SAVI/Parte02/images/scene.jpg")
-    template = cv2.imread("../SAVI/Parte02/images/wally.png")
     H,W,_=img.shape
     h,w,_=template.shape
-    #Load image
 
-    method = cv2.TM_CC0EFF
+    method = cv2.TM_CCOEFF
+    #Quanto maior o coeficiente de correlação, melhor
 
     #Apply template matching
-    result = cv2.matchTemplate(img, template, method)
-    _, max_val, _, max_loc = cv2.minMaxLoc(result)
+    res = cv2.matchTemplate(img, template, method)
+    _, _, _, max_loc = cv2.minMaxLoc(res)
+    #Queremos os máximos de forma a ter o maior coef.
 
-    cv2.imshow('Resultado',result)
+    top_left=max_loc
+    bottom_right=(top_left[0] + w, top_left[1]+h)
+
+    cv2.rectangle(img, top_left, bottom_right,255,2)
+
+    cv2.imshow('Resultado',img)
+    cv2.waitKey(0)
+
+if __name__=='__main__':
+    main()
