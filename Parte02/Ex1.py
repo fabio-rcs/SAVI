@@ -10,15 +10,15 @@ def main():
 
     print('Showing Image lake.jpg')
 
-    image = cv2.imread("../SAVI/Parte02/images/lake.jpg")
-    img = cv2.imread("../SAVI/Parte02/images/lake.jpg")
+    image = cv2.imread("../Parte02/images/lake.jpg")
+    img = cv2.imread("../Parte02/images/lake.jpg")
 
     #Load image
-
+    h,w,_=image.shape[::]
     img_dark=image
     img_dark[:,int(w/2):] = (image[:,int(w/2):]*0.5).astype(np.int8)     
     
-    h,w,_= img.shape[::-1]
+    H,W,_= img.shape[::-1]
 
     #for y in range(0,h/2):
     #    for x in range(0,w):
