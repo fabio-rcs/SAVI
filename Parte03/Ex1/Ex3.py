@@ -62,13 +62,38 @@ def main():
             # Compute the different in color and make a decision
             diff = abs(rect['avg_color'] - rect['model_avg_color'])
 
-
+            
             if diff > 20 and (stamp - rect['tic_since_car_count']) > blackout_time:
                 rect['ncars'] = rect['ncars'] + 1
                 total_car_count += 1 
                 rect['tic_since_car_count'] = stamp
+            
+                # Initialize Variable
+                r_total = 0
+                g_total = 0
+                b_total = 0
+                pixel_color = (0,0,0)
+                count = 0
 
-
+                for row in range (rect['y1'],rect['y2']):
+                    for col in range(rect['x1'],rect['x2']):
+                        #RGB value of pixel
+                        r,g,b = image_rgb[row,col]
+                        r_total += r
+                        g_total += g
+                        b_total += b
+                        count += 1
+            
+                pixel_color = (r_total/count, g_total/count, b_total/count)
+    
+                if pixel_color[0] > (pixel_color[1] and pixel_color[2]) :
+                    #if (pixel_color[0]) > 
+                    print('Car color is red')
+                if pixel_color[1] > pixel_color[0] and pixel_color[2]:
+                    print('Car color is green')
+                if pixel_color[2] > pixel_color[1] and pixel_color[0]:
+                    print('Car color is blue')
+                print(pixel_color)
         is_first_time = False
 
         
