@@ -24,10 +24,10 @@ def main():
 
     cv2.rectangle(img, top_left, bottom_right,255,2)
 
-    cv2.imshow('Resultado',img)
+    cv2.imshow('Result',img)
     cv2.waitKey(0)
 
-    """Para a segunda imagem:"""
+    """For the 2nd image:"""
     res2 = cv2.matchTemplate(img2, template, method)
     _, _, _, max_loc2 = cv2.minMaxLoc(res2)
 
@@ -36,10 +36,10 @@ def main():
 
     cv2.rectangle(img2, top_left2, bottom_right2,255,2)
 
-    cv2.imshow('Resultado',img2)
+    cv2.imshow('Result',img2)
     cv2.waitKey(0)
     
-    """Para a terceira imagem:"""
+    """For the 3rd image:"""
     res3 = cv2.matchTemplate(img3, template, method)
     _, _, _, max_loc3 = cv2.minMaxLoc(res3)
 
@@ -48,7 +48,7 @@ def main():
 
     cv2.rectangle(img3, top_left3, bottom_right3,255,2)
 
-    cv2.imshow('Resultado',img3)
+    cv2.imshow('Result',img3)
     cv2.waitKey(0)
     
 if __name__=='__main__':

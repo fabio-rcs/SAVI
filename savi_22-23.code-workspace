@@ -5,11 +5,16 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"path": "../FacialRecognitionSAVI"
 		}
 	],
 	"settings": {
 		"cSpell.words": [
-			"imshow"
+			"bboxes",
+			"imshow",
+			"XVID"
 		]
 	}
 }
