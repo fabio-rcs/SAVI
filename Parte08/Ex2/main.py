@@ -17,10 +17,10 @@ def main():
     # ------------------------------------------
 
     # Two images, query (q) and target (t)
-    q_path = '../images/machu_pichu/query_warped.png'
+    q_path = '../images/marvao/2.png'
     q_image = cv2.imread(q_path)
 
-    t_path = '../images/machu_pichu/target.png'
+    t_path = '../images/marvao/1.png'
     t_image = cv2.imread(t_path)
 
     image_mosaic = ImageMosaic(q_image, t_image) # created the class
