@@ -6,7 +6,7 @@ Fábio Sousa
 ##### :point_right: University of Aveiro, 2022/2023 :point_left:
 ## Summary
 
-Here are all the files and functions from the classes used to learn Industrial Vision with python using the IDE VSCode and the OpenCV library.
+Here are all the files and functions from the classes used to learn Industrial Vision with python using the IDE VSCode, OpenCV and Open3D libraries.
 
 ## Useful links 
 
